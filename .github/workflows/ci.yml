@@ -21,12 +21,12 @@ jobs:
           ref: master
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Archive
-        run: tar -cvf ${REPO_NAME}.case *.csv README LICENSE
+        run: tar -cvf gs4.case *.csv README LICENSE
       - name: Upload archive
         uses: actions/upload-artifact@v2
         with:
           name: case
-          path: ${REPO_NAME}.case
+          path: gs4.case
   dcpf:
     name: Archive DCPF
     runs-on: ubuntu-latest
@@ -39,12 +39,12 @@ jobs:
           ref: dcpf
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Archive
-        run: tar -cvf ${REPO_NAME}-dcpf.case *.csv README LICENSE
+        run: tar -cvf gs4-dcpf.case *.csv README LICENSE
       - name: Upload archive
         uses: actions/upload-artifact@v2
         with:
           name: case-dcpf
-          path: ${REPO_NAME}-dcpf.case
+          path: gs4-dcpf.case
 
   release:
     name: Release

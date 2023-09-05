@@ -50,6 +50,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     if: "startsWith(github.ref, 'refs/tags/')"
+    permissions: write-all
     needs: [ base, dcpf ]
     steps:
       - uses: actions/download-artifact@v2

@@ -76,7 +76,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./gs4.case
-          asset_name: gs4-${{ github.ref }}.case
+          asset_name: gs4-${{ github.ref_name }}.case
           asset_content_type: application/x-tar
 
       - name: Upload dcpf artifact
@@ -86,5 +86,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./gs4-dcpf.case
-          asset_name: gs4-dcpf-${{ github.ref }}.case
+          asset_name: gs4-dcpf-${{ github.ref_name }}.case
           asset_content_type: application/x-tar

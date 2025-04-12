@@ -23,7 +23,7 @@ jobs:
       - name: Archive
         run: tar -cvf gs4.case *.csv README LICENSE
       - name: Upload archive
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: case
           path: gs4.case
@@ -41,7 +41,7 @@ jobs:
       - name: Archive
         run: tar -cvf gs4-dcpf.case *.csv README LICENSE
       - name: Upload archive
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: case-dcpf
           path: gs4-dcpf.case
@@ -53,10 +53,10 @@ jobs:
     permissions: write-all
     needs: [ base, dcpf ]
     steps:
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: case
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: case-dcpf
 
